@@ -10,8 +10,6 @@ import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity() {
     private val apiService = APIService.getService()
@@ -26,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         val button = findViewById<Button>(R.id.getButton)
         button.setOnClickListener() {
             lifecycleScope.launch(Dispatchers.IO + coroutineExceptionHandler) {
-                val service = apiService.getPostById(textEdit.text.toString().toInt())
+                val service = apiService.getTodosById(textEdit.text.toString().toInt())
                 withContext(Dispatchers.Main) {
                     resultText.text = service?.title
                 }

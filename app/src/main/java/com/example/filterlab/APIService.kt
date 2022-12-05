@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class APIService {
     companion object {
-        const val BASE_URL = "https://jsonplaceholder.typicode.com/"
+        const val BASE_URL = "https://jsonplaceholder.typicode.com"
 
         @Volatile
         private var INSTANCE: APIServiceInterface? = null
