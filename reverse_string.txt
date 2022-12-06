@@ -1,0 +1,5 @@
+val reversedEdit = findViewById<EditText>(R.id.reversedText)
+        val reverseButton = findViewById<Button>(R.id.reverseButton)
+        reverseButton.setOnClickListener (){
+            reversedEdit.setText(reversedEdit.text.toString().reversed())
+        }
